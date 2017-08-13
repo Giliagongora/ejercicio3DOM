@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +18,37 @@
 
   <script>
     function myFunction() {
+
+      //Ingreso de Nombre
+
+      //extraigo el valor ingresado por el usuario
       var usuario = document.getElementById("name").value;
-      var mostrarMail = document.getElementById("email").value;
+      //el id creado en el html lo traigo y inserto en una variable
+      var container = document.getElementById("mostrarNombre");
+      //creo un elemento p e inserto en una variable
+      var x = document.createElement("P");
+      //el valor ingresado por el usuario se vuelve nodo de texto e inserto en una variable
+      var t = document.createTextNode(usuario);
+      //t se vuelve hijo de x, es decir,lo ingresado por el usuario lo ingreso en el node de texto creado (p) 
+      x.appendChild(t);
+      // a mi variable x le doy de padre a container
+      container.appendChild(x);
+      //Limpio el ingreso de texto
+      document.getElementById("name").value =  "";
 
-      var usuario = document.getElementById("name");
-      var usu = document.getElementBy("mostrarNombre");
-      usu.innerHTML = usuario;
 
-      var correo = document.getElementById("email");
-      var cor = document.getElementBy("mostrarMail");
-      cor.innerHTML = correo;
+      //ingreso de mail
+      var usuariomail = document.getElementById("email").value;
+      var containermail = document.getElementById("mostrarMail");
+
+      var mailcreate = document.createElement("p");
+      var mailnodo = document.createTextNode(usuariomail);
+
+      mailcreate.appendChild(mailnodo);
+      containermail.appendChild(mailcreate);
+      document.getElementById("email").value = "";
+
+
 
 
     }
